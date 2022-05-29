@@ -1,0 +1,142 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+nav{
+    color: black;
+    background-color: rgb(193, 125, 211);
+}
+
+main{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    color: black;
+    background-color:rgb(193, 125, 211);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.ul-nav{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    height: 10%;
+}
+
+header a{
+    text-align: center;
+}
+
+nav{
+    height: 10%;
+}
+
+footer{
+    height: 10%;
+    width: 100%;
+    margin-top:10px;
+}
+
+.ul-footer{
+    list-style-type: none;
+}
+
+
+footer a{
+    color: #000085;
+    background-color: rgb(193, 125, 211);
+    text-decoration: none;
+}
+
+nav a{
+    font-size: large;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    background-color: rgb(193, 125, 211);
+    font-family: Arial, sans-serif;
+}
+
+
+.img-logo {
+    width: 40%;
+}
+
+article.infoTornado{
+    display:flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+#tornado {
+    width: 40%;
+}
+
+ #hasEvents{
+     width:40%;
+ }
+
+.tablaInfoTornado {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    margin-bottom: 1em;
+
+}
+
+.tablaInfoTornado td, .tablaInfoTornado th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.th1 {
+    width: 30%;
+}
+
+.th2{
+    width: 70%;
+}
+
+.tablaInfoTornado tr:nth-child(even){background-color: #f2f2f2;}
+
+.tablaInfoTornado tr:hover {background-color: #ddd;}
+
+.tablaInfoTornado th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #A05AB2;
+    color: white;
+}
+
+tr td.nameProperty{
+    text-align: left;
+}
+
+h1{
+    margin-left: 2.5em;
+}
+

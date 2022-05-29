@@ -1,0 +1,12 @@
+{
+  "name": "WSUO265060",
+  "version": "1.0.0",
+  "dependencies": {
+    "@hapi/hapi": "^18.4.0",
+    "@hapi/inert": "^5.2.2",
+    "@hapi/vision": "^5.5.4",
+    "handlebars": "^4.4.3",
+    "node-fetch": "^2.6.1",
+    "wikibase-sdk": "^8.0.0"
+  }
+}

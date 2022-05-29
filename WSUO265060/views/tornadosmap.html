@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <title>tornados LPG - Tornadoes map</title>
+    <link rel="stylesheet" href="css/tornadosmap.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+          integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+          crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+            integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+            crossorigin=""></script>
+</head>
+<body>
+<header>
+    <a href="/">
+        <img  class="img-logo" src="images/tornadosLPG.png" alt="Logo de LuciaPG"/>
+    </a>
+</header>
+<nav>
+    <ul class="ul-nav">
+        <li><a href="/">US tornadoes</a></li>
+        <li><a href="/tornadosmap">Tornadoes map</a></li>
+    </ul>
+</nav>
+<main>
+    <h1>US tornadoes map</h1>
+    <div id="map"></div>
+
+    <script id="scriptmap">
+        var map = L.map('map').setView([39.806862, -96.681679], 4);
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'pk.eyJ1IjoidW8yNjUwNjAiLCJhIjoiY2wzbzViM2IwMGoyaDNibnkxaTRqNnJyaCJ9.WV30PE6FqXIR79EztD-Vng'
+        }).addTo(map);
+
+        function createMarker(id,label,latitude,longitude) {
+            var url = "/tornado/"+id
+            L.marker([latitude, longitude]).bindPopup(label+"\n"+ '<a href='+url+'>More info</a>').addTo(map);
+        }
+
+    </script>
+    {{#each tornados}}
+    <script>
+        createMarker("{{id}}","{{label}}","{{properties.latitude.value}}","{{properties.longitude.value}}")
+    </script>
+    {{/each}}
+</main>
+<footer>
+
+    <a href="/">
+        <img  class="img-logo" src="images/tornadosLPG.png" alt="Logo de LuciaPG"/>
+    </a>
+    <ul class="ul-footer">
+        <li><a href="/">US tornadoes</a></li>
+        <li><a href="/tornadosmap">Tornadoes map</a></li>
+    </ul>
+</footer>
+</body>
+
+</html>

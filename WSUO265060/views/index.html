@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <title>tornados LPG - US tornadoes</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"/>
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+</head>
+<body>
+<header>
+    <a href="/">
+        <img  class="img-logo" src="images/tornadosLPG.png" alt="Logo de LuciaPG"/>
+    </a>
+</header>
+<nav>
+    <ul class="ul-nav">
+        <li><a href="/">US tornadoes</a></li>
+        <li><a href="/tornadosmap">Tornadoes map</a></li>
+    </ul>
+</nav>
+<main>
+    <h1>US tornadoes</h1>
+    <table id="tornados">
+        <thead>
+            <tr>
+                <th>Tornado</th>
+                <th>Enhanced Fujita Scale</th>
+                <th>Begin date</th>
+                <th>State</th>
+                <th>County</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>More info</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each tornados}}
+            <tr>
+                <td>{{label}}</td>
+                <td>{{properties.EnhancedFujitaScale.value}}</td>
+                <td>{{properties.beginDate.value}}</td>
+                <td>{{properties.state.value}}</td>
+                <td>{{properties.county.value}}</td>
+                <td>{{properties.latitude.value}}</td>
+                <td>{{properties.longitude.value}}</td>
+                <td><a href="/tornado/{{id}}">More info</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+</main>
+<footer>
+    <a href="/">
+        <img  class="img-logo" src="images/tornadosLPG.png" alt="Logo de LuciaPG"/>
+    </a>
+    <ul class="ul-footer">
+        <li><a href="/">US tornadoes</a></li>
+        <li><a href="/tornadosmap">Tornadoes map</a></li>
+    </ul>
+</footer>
+<script>
+    $(document).ready( function () {
+        var table = $('#tornados').DataTable({
+            responsive: true,
+            orderCellsTop: true,
+            pageLength: 8
+        });
+    } );
+</script>
+</body>
+
+</html>

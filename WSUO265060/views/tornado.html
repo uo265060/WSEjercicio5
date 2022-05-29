@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <title>tornados LPG - Info tornado</title>
+    <link rel="stylesheet" href="/css/tornado.css">
+
+</head>
+<body>
+<header>
+    <a href="/">
+        <img  class="img-logo" src="/images/tornadosLPG.png" alt="Logo de LuciaPG"/>
+    </a>
+</header>
+<nav>
+    <ul class="ul-nav">
+        <li><a href="/">US tornadoes</a></li>
+        <li><a href="/tornadosmap">Tornadoes map</a></li>
+    </ul>
+</nav>
+<main>
+    <h1>{{tornado.label}}</h1>
+    <article class="infoTornado">
+        <h2 hidden>Info tornado</h2>
+        <table id="tornado" class="tablaInfoTornado">
+            <tr>
+                <th class="th1">Property</th>
+                <th class="th2">Value</th>
+            </tr>
+            <tr>
+                <td class="nameProperty">Tornado</td>
+                <td>{{tornado.label}}</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">Enhanced Fujita Scale</td>
+                <td>{{tornado.properties.EnhancedFujitaScale.value}}</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">Begin date</td>
+                <td>{{tornado.properties.beginDate.value}}</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">Duration</td>
+                <td>{{tornado.properties.duration.value}} seconds</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">Length</td>
+                <td>{{tornado.properties.length.value}} miles</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">Width</td>
+                <td>{{tornado.properties.width.value}} yards</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">County</td>
+                <td>{{tornado.properties.county.value}}</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">State</td>
+                <td>{{tornado.properties.state.value}}</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">Country</td>
+                <td>{{tornado.properties.country.value}}</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">Latitude</td>
+                <td>{{tornado.properties.latitude.value}}</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">Longitude</td>
+                <td>{{tornado.properties.longitude.value}}</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">Injuries</td>
+                <td>{{tornado.properties.injuries.value}}</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">Deaths</td>
+                <td>{{tornado.properties.deaths.value}}</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">Property damage</td>
+                <td>{{tornado.properties.propertyDamage.value}} $</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">Crop damage</td>
+                <td>{{tornado.properties.cropDamage.value}} $</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">Movement speed</td>
+                <td>{{tornado.properties.movementSpeed.value}} mph</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">Max wind speed</td>
+                <td>{{tornado.properties.maxWindSpeed.value}} mph</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">Type</td>
+                <td>{{tornado.properties.landOrMarine.value}}</td>
+            </tr>
+            <tr>
+                <td class="nameProperty">Source</td>
+                <td>{{tornado.properties.source.value}}</td>
+            </tr>
+        </table>
+        <table id="hasEvents" class="tablaInfoTornado">
+            <tr>
+                <th class="th1">Event</th>
+                <th class="th2">Type</th>
+            </tr>
+            {{#each events}}
+            <tr>
+                <td>{{event}}</td>
+                <td>{{typeEvent}}</td>
+            </tr>
+            {{/each}}
+        </table>
+
+    </article>
+
+
+</main>
+<footer>
+
+    <a href="/">
+        <img  class="img-logo" src="/images/tornadosLPG.png" alt="Logo de LuciaPG"/>
+    </a>
+    <ul class="ul-footer">
+        <li><a href="/">US tornadoes</a></li>
+        <li><a href="/tornadosmap">Tornadoes map</a></li>
+    </ul>
+</footer>
+</body>
+
+</html>
